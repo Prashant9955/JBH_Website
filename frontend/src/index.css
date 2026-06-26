@@ -1,0 +1,25 @@
+:root {
+  --ink: #0b0c0e;
+  --paper: #f5f0e8;
+  --gold: #c8973a;
+  --gold-light: #e8b85a;
+  --rust: #c04a2b;
+  --teal: #1a6b6b;
+  --teal-light: #2a9090;
+  --cream: #faf6ee;
+  --muted: #8a8070;
+  --border: #d4c8b0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
