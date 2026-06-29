@@ -26,12 +26,13 @@ body {
 /* ── CUSTOM CURSOR ── */
 .cursor {
   width: 10px; height: 10px;
-  background: var(--gold);
+  color: #0b0c0e;
+  background: var(--ink);
   border-radius: 50%;
   position: fixed; top: 0; left: 0;
   pointer-events: none; z-index: 9999;
   transition: transform 0.1s;
-  mix-blend-mode: multiply;
+  mix-blend-mode: normal;
 }
 .cursor-ring {
   width: 36px; height: 36px;
@@ -40,7 +41,7 @@ body {
   position: fixed; top: 0; left: 0;
   pointer-events: none; z-index: 9998;
   transition: transform 0.25s cubic-bezier(.25,.8,.25,1), width 0.3s, height 0.3s, border-color 0.3s;
-  mix-blend-mode: multiply;
+  mix-blend-mode: normal;
 }
 body:has(a:hover) .cursor-ring,
 body:has(button:hover) .cursor-ring { width: 56px; height: 56px; border-color: var(--rust); }
@@ -237,7 +238,6 @@ section { padding: 100px 5vw; }
 .facilities-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .facility-card { background:rgb(246, 243, 243); border-radius:12px; overflow:hidden; border: 1px solid var(--border); transition: all 0.4s cubic-bezier(.25,.8,.25,1); position:relative; display:flex; flex-direction:column; }
 .facility-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(106, 35, 35, 0.1); border-color: var(--gold); }
-.facility-card:nth-child() { grid-row: span 2; }
 .facility-thumb { aspect-ratio: 16/9; display:flex; align-items:center; justify-content:center; font-size: 3rem; position:relative; overflow:hidden; }
 .facility-body { padding: 24px; }
 .facility-num { font-family:'IBM Plex Mono', monospace; font-size:0.65rem; color:var(--muted); letter-spacing:2px; margin-bottom:8px; }

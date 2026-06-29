@@ -20,6 +20,7 @@ export function verifyPassword(password: string, stored: string) {
   const parts = stored.split("$");
   if (parts.length !== 5) return false;
   const [algo, digest, iterationsStr, saltB64, dkB64] = parts;
+  if (!algo || !digest || !iterationsStr || !saltB64 || !dkB64) return false;
   if (algo !== "pbkdf2" || digest !== "sha256") return false;
   const iterations = Number(iterationsStr);
   if (!Number.isFinite(iterations) || iterations < 100_000) return false;

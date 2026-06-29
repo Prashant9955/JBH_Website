@@ -1,13 +1,13 @@
-import { connectDb } from "../config/db";
-import { env } from "../config/env";
-import { Admin } from "../models/Admin";
-import { Student } from "../models/Student";
-import { Notice } from "../models/Notice";
-import { MessBill } from "../models/MessBill";
-import { Complaint } from "../models/Complaint";
-import { MessMenu } from "../models/MessMenu";
-import { SeatAvailability } from "../models/SeatAvailability";
-import { hashPassword } from "../utils/password";
+import { connectDb } from "../config/db.js";
+import { env } from "../config/env.js";
+import { Admin } from "../models/Admin.js";
+import { Student } from "../models/Student.js";
+import { Notice } from "../models/Notice.js";
+import { MessBill } from "../models/MessBill.js";
+import { Complaint } from "../models/Complaint.js";
+import { MessMenu } from "../models/MessMenu.js";
+import { SeatAvailability } from "../models/SeatAvailability.js";
+import { hashPassword } from "../utils/password.js";
 
 async function seed() {
   await connectDb();
@@ -28,6 +28,7 @@ async function seed() {
     { username: "admin", passwordHash: pw, fullName: "Hostel Admin", role: "admin", email: "admin@jbh.dei.ac.in" },
     { username: "warden", passwordHash: pw, fullName: "Chief Warden", role: "warden", email: "warden@jbh.dei.ac.in" },
   ]);
+  if (!admin || !warden) throw new Error("Failed to seed admin/warden accounts");
 
   const student = await Student.create({
     studentId: "DEI-2K23-CS-042",

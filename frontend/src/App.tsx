@@ -2,6 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import { LoginPage } from "./pages/LoginPage";
 import { StudentDashboardPage } from "./pages/dashboard/StudentDashboardPage";
+import { AdminDashboardPage } from "./pages/dashboard/AdminDashboardPage";
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/dashboard/student" element={<StudentDashboardPage />} />
+        <Route path="/dashboard/admin" element={<AdminDashboardPage />} />
         <Route path="/dashboard" element={<Navigate to="/dashboard/student" replace />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

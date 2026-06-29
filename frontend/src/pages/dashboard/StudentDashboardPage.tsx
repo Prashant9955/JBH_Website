@@ -322,7 +322,7 @@ export function StudentDashboardPage() {
                   </a>
                 </div>
                 <div className="card-body">
-                  {(data?.latestNotices ?? []).slice(0, 4).map((n) => (
+                  {(data?.latestNotices ?? []).slice(0, 5).map((n) => (
                     <div key={n.createdAt + n.title} className="notice-list-item">
                       <span className={`notice-dot ${noticeDotClass(n.category)}`} />
                       <div>

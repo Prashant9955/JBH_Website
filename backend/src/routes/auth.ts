@@ -1,11 +1,11 @@
 import { Router } from "express";
 import { z } from "zod";
-import { Admin } from "../models/Admin";
-import { Student } from "../models/Student";
-import { signToken } from "../auth/jwt";
-import { env } from "../config/env";
-import { verifyPassword } from "../utils/password";
-import { requireAuth, type AuthedRequest } from "../middleware/auth";
+import { Admin } from "../models/Admin.js";
+import { Student } from "../models/Student.js";
+import { signToken } from "../auth/jwt.js";
+import { env } from "../config/env.js";
+import { verifyPassword } from "../utils/password.js";
+import { requireAuth, type AuthedRequest } from "../middleware/auth.js";
 
 export const authRouter = Router();
 
@@ -22,6 +22,12 @@ authRouter.post("/login", async (req, res) => {
 
   if (role === "student") {
     const student = await Student.findOne({ studentId: userId, isActive: true }).exec();
+    console.log(student);
+    console.log(password);
+    console.log(student?.passwordHash);
+    console.log(
+        verifyPassword(password, student!.passwordHash)
+    );
     if (!student || !verifyPassword(password, student.passwordHash)) {
       return res.status(401).json({ success: false, message: "Invalid credentials. Please try again." });
     }

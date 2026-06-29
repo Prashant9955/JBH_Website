@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { z } from "zod";
-import { ContactSubmission } from "../models/ContactSubmission";
-import { SeatAvailability } from "../models/SeatAvailability";
+import { ContactSubmission } from "../models/ContactSubmission.js";
+import { SeatAvailability } from "../models/SeatAvailability.js";
 
 export const publicRouter = Router();
 

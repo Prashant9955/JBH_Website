@@ -1,13 +1,13 @@
 import { Router } from "express";
 import { z } from "zod";
-import { requireAuth, requireRole, type AuthedRequest } from "../middleware/auth";
-import { Student } from "../models/Student";
-import { Notice } from "../models/Notice";
-import { MessBill } from "../models/MessBill";
-import { MessMenu } from "../models/MessMenu";
-import { Complaint } from "../models/Complaint";
-import { LeaveApplication } from "../models/LeaveApplication";
-import { Payment } from "../models/Payment";
+import { requireAuth, requireRole, type AuthedRequest } from "../middleware/auth.js";
+import { Student } from "../models/Student.js";
+import { Notice } from "../models/Notice.js";
+import { MessBill } from "../models/MessBill.js";
+import { MessMenu } from "../models/MessMenu.js";
+import { Complaint } from "../models/Complaint.js";
+import { LeaveApplication } from "../models/LeaveApplication.js";
+import { Payment } from "../models/Payment.js";
 
 export const studentRouter = Router();
 
@@ -75,14 +75,14 @@ studentRouter.post("/leave", async (req: AuthedRequest, res) => {
   }
   if (from > to) return res.status(400).json({ success: false, message: "From date must be before to date" });
 
-  await LeaveApplication.create({
+  const leave = await LeaveApplication.create({
     student: req.auth!.userId,
     fromDate: from,
     toDate: to,
     reason: reason || undefined,
   });
 
-  res.json({ success: true });
+  res.json({ success: true, id: leave._id.toString() });
 });
 
 const ComplaintSchema = z.object({

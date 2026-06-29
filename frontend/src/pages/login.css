@@ -21,8 +21,8 @@
   cursor:none;
 }
 
-.cursor { width:8px;height:8px;background:var(--gold);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;mix-blend-mode:screen; }
-.cursor-ring { width:32px;height:32px;border:1px solid var(--gold);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transition:transform 0.2s cubic-bezier(.25,.8,.25,1);mix-blend-mode:screen; }
+.cursor { width:8px;height:8px;color:#97b8e8;background-color:var(--ink);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;mix-blend-mode:normal; }
+.cursor-ring { width:32px;height:32px;border:1px solid var(--ink);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transition:transform 0.2s cubic-bezier(.25,.8,.25,1);mix-blend-mode:normal; }
 
 /* Left panel */
 .left-panel { position:relative; overflow:hidden; display:flex;flex-direction:column;justify-content:space-between; padding: 48px; background: linear-gradient(160deg, #0a1628 0%, #0d3333 50%, #1a0d08 100%); }
@@ -83,8 +83,8 @@
 .input-action { position:absolute; right:14px; top:50%; transform:translateY(-50%); background:none; border:none; cursor:pointer; color:var(--muted); font-size:0.85rem; transition:color 0.3s; }
 .input-action:hover { color:var(--ink); }
 .form-options { display:flex; align-items:center; justify-content:space-between; margin-bottom:28px; margin-top:-6px; }
-.checkbox-label { display:flex; align-items:center; gap:8px; font-size:0.82rem; color:var(--muted); cursor:pointer; }
-.checkbox-label input[type="checkbox"] { width:16px; height:16px; accent-color:var(--gold); cursor:pointer; }
+.checkbox-label { display:flex; align-items:center; gap:8px; font-size:0.82rem; color:var(--ink); cursor:pointer; }
+.checkbox-label input[type="checkbox"] { width:16px; height:16px; accent-color:var(--ink); cursor:pointer; }
 .forgot-link { font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:1px; color:var(--teal); text-decoration:none; text-transform:uppercase; transition:color 0.3s; }
 .forgot-link:hover { color:var(--gold); }
 .btn-login { width:100%; padding:15px; background:var(--ink); color:var(--gold); border:2px solid var(--ink); border-radius:6px; font-family:'IBM Plex Mono',monospace; font-size:0.8rem; letter-spacing:2px; text-transform:uppercase; cursor:pointer; font-weight:600; transition:all 0.3s; display:flex; align-items:center; justify-content:center; gap:12px; position:relative; overflow:hidden; }

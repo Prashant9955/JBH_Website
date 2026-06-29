@@ -1,6 +1,6 @@
 import type { NextFunction, Request, Response } from "express";
-import { env } from "../config/env";
-import { verifyToken } from "../auth/jwt";
+import { env } from "../config/env.js";
+import { verifyToken } from "../auth/jwt.js";
 
 export type AuthedRequest = Request & { auth?: { userId: string; role: "student" | "admin" | "warden" } };
 

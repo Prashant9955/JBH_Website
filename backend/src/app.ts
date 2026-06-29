@@ -1,10 +1,11 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import { env } from "./config/env";
-import { authRouter } from "./routes/auth";
-import { publicRouter } from "./routes/public";
-import { studentRouter } from "./routes/student";
+import { env } from "./config/env.js";
+import { authRouter } from "./routes/auth.js";
+import { publicRouter } from "./routes/public.js";
+import { studentRouter } from "./routes/student.js";
+import { adminRouter } from "./routes/admin.js";
 
 export function createApp() {
   const app = express();
@@ -23,6 +24,7 @@ export function createApp() {
   app.use("/api/auth", authRouter);
   app.use("/api", publicRouter);
   app.use("/api/student", studentRouter);
+  app.use("/api/admin", adminRouter);
 
   return app;
 }
